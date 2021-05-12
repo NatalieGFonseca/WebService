@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/fuso")
 public class FusosResource {
 	
-	@GetMapping("/{local}")
+	@GetMapping(value="/{local}")
 	public ZonedDateTime verificar(@PathVariable ZoneId local){
 		LocalDateTime hora = LocalDateTime.now();
 		local = ZoneId.of(local.getDisplayName(null, null));
