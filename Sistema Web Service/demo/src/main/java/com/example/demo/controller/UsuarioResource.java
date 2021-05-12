@@ -25,12 +25,12 @@ public class UsuarioResource {
 		return usuarios.save(usuario);
 	}
 	
-	@GetMapping
+	@GetMapping(produces="application/json")
 	public List<Usuario> listaUsuarios(){
 		return usuarios.findAll();
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/{id}", produces="application/json")
 	public ResponseEntity<Usuario> consulta(@PathVariable Long id){
 		Usuario usuario = usuarios.findOne(id);
 		
