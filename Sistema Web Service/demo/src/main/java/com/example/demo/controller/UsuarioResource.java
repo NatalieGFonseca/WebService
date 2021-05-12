@@ -30,7 +30,7 @@ public class UsuarioResource {
 		return usuarios.findAll();
 	}
 	
-	@GetMapping("/{id}", produces="application/json")
+	@GetMapping(value="/{id}", produces="application/json")
 	public ResponseEntity<Usuario> consulta(@PathVariable Long id){
 		Usuario usuario = usuarios.findOne(id);
 		
